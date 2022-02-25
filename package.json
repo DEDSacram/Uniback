@@ -8,7 +8,6 @@
     "dependencies": {
         "axios": "^0.26.0",
         "bootstrap": "^5.1.3",
-        "express": "^4.17.3",
         "formik": "^2.2.9",
         "next": "latest",
         "next-auth": "^4.2.1",
@@ -22,8 +21,7 @@
         "react-is": "^17.0.2",
         "react-router-dom": "^6.2.1",
         "reactstrap": "^9.0.1",
-        "styled-components": "^5.3.3",
-        "ts-md5": "^1.2.11"
+        "styled-components": "^5.3.3"
     },
     "devDependencies": {
         "@types/node": "17.0.21",
