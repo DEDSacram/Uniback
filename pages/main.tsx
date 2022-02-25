@@ -1,7 +1,7 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { ReactChild, ReactFragment, ReactPortal } from 'react'
-import Calendar from '../components/Calendar'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { ReactChild, ReactFragment, ReactPortal } from 'react';
+import Calendar from '../components/Calendar';
 
 // export async function getStaticProps() {
 //   // Call an external API endpoint to get posts.
@@ -19,37 +19,30 @@ import Calendar from '../components/Calendar'
 // }
 
 export function Blog({ posts }: any): JSX.Element {
-  return (
-    <ul>
-      {posts.map((post: { title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined }) => (
-        <li>{post.title}</li>
-      ))}
-    </ul>
-  )
+    return (
+        <ul>
+            {posts.map((post: { title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined }) => (
+                <li>{post.title}</li>
+            ))}
+        </ul>
+    );
 }
 
 const Main: NextPage = () => {
-  return (
-    <div>
-    <Head>
-      <title>Main</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-    </Head>
+    return (
+        <div>
+            <Head>
+                <title>Main</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+            </Head>
 
+            <Blog></Blog>
 
-    <Blog></Blog>
+            <main className="vh-100 d-flex flex-column justify-content-center align-items-center">
+                <Calendar />
+            </main>
+        </div>
+    );
+};
 
-    <main className="vh-100 d-flex flex-column justify-content-center align-items-center">
-      
-    <Calendar/>
-
-    
-
-    </main>
-  
-
-  </div>
-  )
-}
-
-export default Main
+export default Main;
