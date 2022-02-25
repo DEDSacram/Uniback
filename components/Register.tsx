@@ -10,7 +10,6 @@ interface Values {
     confirmpassword: string;
     email: string;
 }
-const saltRounds = 10;
 // reactstrap components
 import { Button, Modal, ModalBody, ModalFooter } from "reactstrap";
 
@@ -78,22 +77,23 @@ function Example() {
         >
           <Form>
             <div className="mb-3">
-              <Field className="form-control" id="username" name="username" placeholder="Přezdívka" aria-describedby="usernameHelp" />
+              <Field className="form-control" id="username" name="username" placeholder="Přezdívka" aria-describedby="usernameHelp" required/>
             </div>
   
             <div className="mb-3">
-              <Field className="form-control" id="password" name="password" placeholder="Heslo" type="password" />
+              <Field className="form-control" id="password" name="password" placeholder="Heslo" type="password" required/>
             </div>
 
             <div className="mb-3">
-              <Field className="form-control" id="confirmpassword" name="confirmpassword" placeholder="Potvrzení hesla" type="password" />
+              <Field className="form-control" id="confirmpassword" name="confirmpassword" placeholder="Potvrzení hesla" type="password" required/>
             </div>
 
             <div className="mb-3">
               <Field className="form-control" id="email" name="email" placeholder="Email (Optional)"/>
             </div>
-
+          
             <button type="submit" className="btn btn-primary">Registrovat</button>
+            
           </Form>
         </Formik>
 
