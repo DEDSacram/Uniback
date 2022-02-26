@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { ReactChild, ReactFragment, ReactPortal } from 'react';
 import Calendar from '../components/Calendar';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import styled from 'styled-components';
 
 // export async function getStaticProps() {
 //   // Call an external API endpoint to get posts.
@@ -29,6 +29,14 @@ export function Blog({ posts }: any): JSX.Element {
     );
 }
 
+const MainLogin = styled.main`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+`;
+
 const Main: NextPage = () => {
     return (
         <div>
@@ -39,9 +47,9 @@ const Main: NextPage = () => {
 
             <Blog></Blog>
 
-            <main className="vh-100 d-flex flex-column justify-content-center align-items-center">
+            <MainLogin>
                 <Calendar />
-            </main>
+            </MainLogin>
         </div>
     );
 };
