@@ -1,7 +1,9 @@
-import React from 'react';
+import { useState } from 'react';
 import { BsFillXCircleFill } from 'react-icons/bs';
 import { Formik, Field, Form, FormikHelpers } from 'formik';
 import styled from 'styled-components';
+// reactstrap components
+import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
 
 interface Values {
     username: string;
@@ -9,11 +11,9 @@ interface Values {
     confirmpassword: string;
     email: string;
 }
-// reactstrap components
-import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
 
 function Example() {
-    const [modalOpen, setModalOpen] = React.useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
 
     const IconButton = styled.button`
         background-color: Transparent;
