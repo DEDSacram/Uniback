@@ -11,16 +11,25 @@ const HrLoginCara = styled.hr`
     width: 80%;
 `;
 
+const MainLogin = styled.main`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    box-sizing: border-box;
+`;
+
 const Home: NextPage = () => {
     return (
-        <div>
+        <>
             <Head>
                 <title>Login Page</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className="vh-100 d-flex flex-column justify-content-center align-items-center">
+            <MainLogin>
                 <div className="d-flex flex-column justify-content-center align-items-center border">
                     <div className="p-2">
                         <LoginForm />
@@ -30,8 +39,8 @@ const Home: NextPage = () => {
                         <Register />
                     </div>
                 </div>
-            </main>
-        </div>
+            </MainLogin>
+        </>
     );
 };
 
