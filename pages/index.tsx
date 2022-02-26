@@ -3,7 +3,6 @@ import Head from 'next/head';
 import LoginForm from '../components/login-form';
 import Register from '../components/Register';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
 import styled from 'styled-components';
 
 const HrLoginCara = styled.hr`

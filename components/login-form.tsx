@@ -1,14 +1,14 @@
 import { Formik, Field, Form, FormikHelpers } from 'formik';
 import styles from '../styles/login-form.module.css';
-import React from 'react';
 import { Userlogin } from '../lib/auth';
+import { Component } from 'react';
 
 interface Values {
     username: string;
     password: string;
 }
 
-export default class LoginForm extends React.Component {
+export default class LoginForm extends Component {
     render() {
         return (
             <div className={styles.login_box + ' p-3'}>
