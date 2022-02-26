@@ -4,12 +4,12 @@ import LoginForm from '../components/login-form';
 import Register from '../components/Register';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
+import styled from 'styled-components';
 
-const mystyle = {
-    bordertop: '2px solid rgba(0, 0, 0, 0.1)',
-
-    width: '80%',
-};
+const HrLoginCara = styled.hr`
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    width: 80%;
+`;
 
 const Home: NextPage = () => {
     return (
@@ -25,7 +25,7 @@ const Home: NextPage = () => {
                     <div className="p-2">
                         <LoginForm />
                     </div>
-                    <hr style={mystyle}></hr>
+                    <HrLoginCara />
                     <div className="p-2">
                         <Register />
                     </div>
