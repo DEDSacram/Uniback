@@ -17,7 +17,19 @@ const MainLogin = styled.main`
     align-items: center;
     justify-content: center;
     height: 100vh;
-    box-sizing: border-box;
+`;
+
+const DivLogin = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    border: 1px solid #dee2e6;
+`;
+
+const DivLoginSekce = styled.div`
+    padding: 0.5rem;
 `;
 
 const Home: NextPage = () => {
@@ -31,13 +43,13 @@ const Home: NextPage = () => {
 
             <MainLogin>
                 <div className="d-flex flex-column justify-content-center align-items-center border">
-                    <div className="p-2">
+                    <DivLoginSekce>
                         <LoginForm />
-                    </div>
+                    </DivLoginSekce>
                     <HrLoginCara />
-                    <div className="p-2">
+                    <DivLoginSekce>
                         <Register />
-                    </div>
+                    </DivLoginSekce>
                 </div>
             </MainLogin>
         </>
