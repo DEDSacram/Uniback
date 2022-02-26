@@ -2,6 +2,7 @@ import { Formik, Field, Form, FormikHelpers } from 'formik';
 import styles from '../styles/login-form.module.css';
 import { Userlogin } from '../lib/auth';
 import { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 interface Values {
     username: string;

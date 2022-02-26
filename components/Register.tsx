@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { BsFillXCircleFill } from 'react-icons/bs';
 import { Formik, Field, Form, FormikHelpers } from 'formik';
 import styled from 'styled-components';
+import 'bootstrap/dist/css/bootstrap.min.css';
 // reactstrap components
 import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
 

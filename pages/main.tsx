@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { ReactChild, ReactFragment, ReactPortal } from 'react';
 import Calendar from '../components/Calendar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // export async function getStaticProps() {
 //   // Call an external API endpoint to get posts.
