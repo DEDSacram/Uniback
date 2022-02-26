@@ -24,7 +24,6 @@ const DivLogin = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     border: 1px solid #dee2e6;
 `;
 
@@ -42,7 +41,7 @@ const Home: NextPage = () => {
             </Head>
 
             <MainLogin>
-                <div className="d-flex flex-column justify-content-center align-items-center border">
+                <DivLogin>
                     <DivLoginSekce>
                         <LoginForm />
                     </DivLoginSekce>
@@ -50,7 +49,7 @@ const Home: NextPage = () => {
                     <DivLoginSekce>
                         <Register />
                     </DivLoginSekce>
-                </div>
+                </DivLogin>
             </MainLogin>
         </>
     );
