@@ -43,12 +43,3 @@ export const checkPasswordHash = (
     const passwordHash = hashPassword(password, salt, algorithm, rounds);
     return hash == passwordHash ? true : false;
 };
-
-// export const hashPassword = (password: string): string => {
-//     pbkdf2(password, 'salt', 100000, 64, 'sha512', (err, derivedKey) => {
-//         if (err) throw err;
-//         console.log(derivedKey.toString('hex'));
-//     });
-
-//     return '';
-// };
