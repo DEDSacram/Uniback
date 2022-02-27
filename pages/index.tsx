@@ -1,6 +1,6 @@
 import Register from 'components/Register';
 import styled from 'styled-components';
-import Login from '../components/login'
+import Login from '../components/login';
 import Head from 'next/head';
 
 const HrLoginCara = styled.hr`
@@ -28,8 +28,8 @@ const DivLoginSekce = styled.div`
     padding: 0.5rem;
 `;
 export default function Home() {
-  return (
-    <>
+    return (
+        <>
             <Head>
                 <title>Login Page</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -38,7 +38,7 @@ export default function Home() {
             <MainLogin>
                 <DivLogin>
                     <DivLoginSekce>
-                        <Login/>
+                        <Login />
                     </DivLoginSekce>
                     <HrLoginCara />
                     <DivLoginSekce>
@@ -46,6 +46,6 @@ export default function Home() {
                     </DivLoginSekce>
                 </DivLogin>
             </MainLogin>
-    </>
-  )
+        </>
+    );
 }
