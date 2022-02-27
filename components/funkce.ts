@@ -22,7 +22,7 @@ export const newHashPassword = (password: string) => {
     };
 };
 
-export const checkPassword = (password: string, hash: string, salt: string): boolean => {
+export const checkPasswordHash = (password: string, hash: string, salt: string): boolean => {
     const passwordHash = hashPassword(password, salt);
     return hash == passwordHash ? true : false;
 };
