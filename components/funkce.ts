@@ -12,24 +12,35 @@ export const checkPassword = (password: string): boolean => {
         : false;
 };
 
-const hashPassword = (password: string, salt: string): string => {
-    const hash = createHash('sha512');
-    hash.update(password);
-    hash.update(salt);
-    return hash.digest('hex');
+const hashPassword = (password: string, salt: string, algorithm: string, rounds: number): string => {
+    let tempHash = password + salt;
+
+    for (let i = 1; i <= rounds; i++) {
+        const hash = createHash(algorithm);
+        hash.update(tempHash);
+        tempHash = hash.digest('hex');
+    }
+
+    return tempHash;
 };
 
-export const newHashPassword = (password: string) => {
+export const newHashPassword = (password: string, algorithm: string, rounds: number) => {
     const salt = randomBytes(256).toString('hex');
-    const hash = hashPassword(password, salt);
+    const hash = hashPassword(password, salt, algorithm, rounds);
     return {
         hash: hash,
         salt: salt,
     };
 };
 
-export const checkPasswordHash = (password: string, hash: string, salt: string): boolean => {
-    const passwordHash = hashPassword(password, salt);
+export const checkPasswordHash = (
+    password: string,
+    hash: string,
+    salt: string,
+    algorithm: string,
+    rounds: number
+): boolean => {
+    const passwordHash = hashPassword(password, salt, algorithm, rounds);
     return hash == passwordHash ? true : false;
 };
 
