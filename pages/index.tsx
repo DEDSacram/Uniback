@@ -1,8 +1,7 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import LoginForm from '../components/login-form';
-import Register from '../components/Register';
+import Register from 'components/Register';
 import styled from 'styled-components';
+import Login from '../components/login'
+import Head from 'next/head';
 
 const HrLoginCara = styled.hr`
     border-top: 2px solid rgba(0, 0, 0, 0.1);
@@ -28,20 +27,18 @@ const DivLogin = styled.div`
 const DivLoginSekce = styled.div`
     padding: 0.5rem;
 `;
-
-const Home: NextPage = () => {
-    return (
-        <>
+export default function Home() {
+  return (
+    <>
             <Head>
                 <title>Login Page</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-
             <MainLogin>
                 <DivLogin>
                     <DivLoginSekce>
-                        <LoginForm />
+                        <Login/>
                     </DivLoginSekce>
                     <HrLoginCara />
                     <DivLoginSekce>
@@ -49,8 +46,6 @@ const Home: NextPage = () => {
                     </DivLoginSekce>
                 </DivLogin>
             </MainLogin>
-        </>
-    );
-};
-
-export default Home;
+    </>
+  )
+}

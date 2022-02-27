@@ -1,34 +1,46 @@
-# TypeScript & Styled Components Next.js example
+# Example application using [`iron-session`](https://github.com/vvo/iron-session)
 
-This is a really simple project that show the usage of Next.js with TypeScript and Styled Components.
+<p align="center"><b>👀 Online demo at <a href="https://iron-session-example.vercel.app/">https://iron-session-example.vercel.app</a></b></p>
+
+---
+
+This example creates an authentication system that uses a **signed and encrypted cookie to store session data**. It relies on [`iron-session`](https://github.com/vvo/iron-session).
+
+It uses current best practices for authentication in the Next.js ecosystem and replicates parts of how the Vercel dashboard is built.
+
+**Features of the example:**
+
+- [API Routes](https://nextjs.org/docs/api-routes/dynamic-api-routes) and [getServerSideProps](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props) examples.
+- The logged in status is synchronized between browser windows/tabs using **`useUser`** hook and the [`swr`](https://swr.vercel.app/).
+- The layout is based on the user's logged-in/out status.
+- The session data is signed and encrypted in a cookie (this is done automatically by `iron-session`).
+
+[`iron-session`](https://github.com/vvo/iron-session) also provides:
+
+- An Express middleware, which can be used in any Node.js HTTP framework.
+- Multiple encryption keys (passwords) to allow for seamless updates or just password rotation.
+- Full TypeScript support, including session data.
 
 ## Preview
 
 Preview the example live on [StackBlitz](http://stackblitz.com/):
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-typescript-styled-components)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-iron-session)
 
 ## Deploy your own
 
 Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript-styled-components&project-name=with-typescript-styled-components&repository-name=with-typescript-styled-components)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-iron-session&project-name=with-iron-session&repository-name=with-iron-session)
 
-## How to use it?
+## How to use
 
 Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
 
 ```bash
-npx create-next-app --example with-typescript-styled-components with-typescript-styled-components-app
+npx create-next-app --example with-iron-session with-iron-session-app
 # or
-yarn create next-app --example with-typescript-styled-components with-typescript-styled-components-app
+yarn create next-app --example with-iron-session with-iron-session-app
 ```
 
 Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-
-## Notes
-
-This is an amalgamation of the 2 existing examples:
-
-- [with-typescript](https://github.com/vercel/next.js/tree/canary/examples/with-typescript)
-- [with-styled-components](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components)

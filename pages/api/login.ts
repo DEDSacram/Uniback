@@ -1,21 +1,27 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next';
-import hash from 'object-hash';
+import type { User } from './user'
 
-let b: any = [];
 
-type Data = {
-    username: string;
-    password: string;
-};
+import { withIronSessionApiRoute } from 'iron-session/next'
+import { sessionOptions } from 'lib/session'
+import { NextApiRequest, NextApiResponse } from 'next'
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-    //Pull from Db
-    const x = hash(req.body.password);
-    if (b.includes(x)) {
-        res.status(200).json({ username: '', password: 'true' });
-    } else {
-        b.push(x);
-        res.status(404).json({ username: '', password: 'false' });
-    }
+
+export default withIronSessionApiRoute(loginRoute, sessionOptions)
+
+async function loginRoute(req: NextApiRequest, res: NextApiResponse) {
+  const { username,password } = await req.body
+  // GRAB FROM DB and compare hash BEFORE ASSIGNING USER
+   try{
+    if(username === "admin" && password === "admin"){
+    const user = { isLoggedIn: true, username} as User
+    req.session.user = user
+    await req.session.save()
+    res.json(user)
+  }
+  else{
+    res.status(403).json({ message: "Bad Login" })
+  }
+  } catch (error) {
+    res.status(500).json({ message: (error as Error).message })
+  }
 }

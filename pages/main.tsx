@@ -1,57 +1,33 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import { ReactChild, ReactFragment, ReactPortal } from 'react';
-import Calendar from '../components/Calendar';
-import styled from 'styled-components';
+import React from 'react'
+import useUser from 'lib/useUser'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import fetchJson from 'lib/fetchJson'
 
-// export async function getStaticProps() {
-//   // Call an external API endpoint to get posts.
-//   // You can use any data fetching library
-//   const res = await fetch('https://.../posts')
-//   const posts = await res.json()
+export default function SgProfile() {
+  const { user, mutateUser } = useUser({
+    redirectTo: '/',
+  })
 
-//   // By returning { props: { posts } }, the Blog component
-//   // will receive `posts` as a prop at build time
-//   return {
-//     props: {
-//       posts,
-//     },
-//   }
-// }
+  const router = useRouter()
 
-export function Blog({ posts }: any): JSX.Element {
-    return (
-        <ul>
-            {posts.map((post: { title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined }) => (
-                <li>{post.title}</li>
-            ))}
-        </ul>
-    );
+  return (
+   <div>
+
+<a
+                  href="/api/logout"
+                  onClick={async (e) => {
+                    e.preventDefault()
+                    mutateUser(
+                      await fetchJson('/api/logout', { method: 'POST' }),
+                      false
+                    )
+                    router.push('/login')
+                  }}
+                >
+                  Logout
+                </a>
+
+   </div>
+  )
 }
-
-const MainLogin = styled.main`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-`;
-
-const Main: NextPage = () => {
-    return (
-        <div>
-            <Head>
-                <title>Main</title>
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-            </Head>
-
-            <Blog></Blog>
-
-            <MainLogin>
-                <Calendar />
-            </MainLogin>
-        </div>
-    );
-};
-
-export default Main;
