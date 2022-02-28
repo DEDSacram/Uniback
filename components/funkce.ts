@@ -32,14 +32,3 @@ export const newHashPassword = (password: string, algorithm: string, rounds: num
         salt: salt,
     };
 };
-
-export const checkPasswordHash = (
-    password: string,
-    hash: string,
-    salt: string,
-    algorithm: string,
-    rounds: number
-): boolean => {
-    const passwordHash = hashPassword(password, salt, algorithm, rounds);
-    return hash == passwordHash ? true : false;
-};
