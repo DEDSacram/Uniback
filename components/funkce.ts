@@ -22,11 +22,14 @@ export const hashPassword = (
     return pbkdf2Sync(password, salt, iterations, keylen, algorithm).toString('hex');
 };
 
-export const newHashPassword = (password: string, iterations: number, keylen: number, algorithm: string) => {
+export const newHashPassword = (password: string) => {
     const salt = randomBytes(256).toString('hex');
-    const hash = hashPassword(password, salt, iterations, keylen, algorithm);
+    const hash = hashPassword(password, salt, 10000, 64, 'sha512');
     return {
         hash: hash,
         salt: salt,
+        iterations: 10000,
+        keylen: 64,
+        algorithm: 'sha512',
     };
 };
