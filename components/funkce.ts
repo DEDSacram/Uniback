@@ -19,7 +19,7 @@ export const hashPassword = (
     keylen: number,
     algorithm: string
 ): string => {
-    return pbkdf2Sync(password, salt, iterations, keylen, algorithm).toString();
+    return pbkdf2Sync(password, salt, iterations, keylen, algorithm).toString('hex');
 };
 
 export const newHashPassword = (password: string, iterations: number, keylen: number, algorithm: string) => {
