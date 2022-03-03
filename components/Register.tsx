@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Formik, Field, Form, FormikHelpers } from 'formik';
-import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
+import {Modal, ModalBody, ModalFooter } from 'reactstrap';
+import Button from './Buttom'
 interface Values {
     username: string;
     password: string;
@@ -77,9 +78,9 @@ function Example() {
                                 />
                             </div>
 
-                            <button type="submit" className="btn btn-primary">
+                            <Button type="submit" className="btn btn-primary">
                                 Registrovat
-                            </button>
+                            </Button>
                         </Form>
                     </Formik>
                 </ModalBody>
