@@ -8,4 +8,4 @@ padding: 0.375rem 0.75rem;
 font-size: 1rem;
 transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 `
-export default Button // :)import styled
+export default Button

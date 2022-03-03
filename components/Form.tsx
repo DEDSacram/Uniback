@@ -1,5 +1,5 @@
 import { FormEvent } from 'react';
-import { Button } from './Buttom';
+import Button from './Buttom';
 
 export default function LoginForm({
     errorMessage,
