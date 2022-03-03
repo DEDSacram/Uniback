@@ -1,29 +1,14 @@
 import { useState } from 'react';
-import { BsFillXCircleFill } from 'react-icons/bs';
 import { Formik, Field, Form, FormikHelpers } from 'formik';
-import styled from 'styled-components';
-import 'bootstrap/dist/css/bootstrap.min.css';
-// reactstrap components
 import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
-
 interface Values {
     username: string;
     password: string;
     confirmpassword: string;
     email: string;
 }
-
 function Example() {
     const [modalOpen, setModalOpen] = useState(false);
-
-    const IconButton = styled.button`
-        background-color: Transparent;
-        background-repeat: no-repeat;
-        border: none;
-        cursor: pointer;
-        overflow: hidden;
-        outline: none;
-    `;
     return (
         <>
             <Button color="primary" type="button" onClick={() => setModalOpen(!modalOpen)}>
@@ -34,13 +19,8 @@ function Example() {
                 <div className=" modal-header">
                     <h1 className=" modal-title" id="exampleModalLabel">
                         Registrace
-                    </h1>
-                    <IconButton type="button" onClick={() => setModalOpen(!modalOpen)}>
-                        {' '}
-                        <BsFillXCircleFill onClick={() => setModalOpen(!modalOpen)} />{' '}
-                    </IconButton>
+                    </h1>   
                 </div>
-
                 <ModalBody>
                     <Formik
                         initialValues={{
@@ -50,10 +30,10 @@ function Example() {
                             email: '',
                         }}
                         onSubmit={(values: Values, { setSubmitting }: FormikHelpers<Values>) => {
-                            setTimeout(() => {
+                          
                                 alert(JSON.stringify(values, null, 2));
                                 setSubmitting(false);
-                            }, 500);
+                         
                         }}
                     >
                         <Form>
@@ -78,7 +58,6 @@ function Example() {
                                     required
                                 />
                             </div>
-
                             <div className="mb-3">
                                 <Field
                                     className="form-control"
@@ -89,7 +68,6 @@ function Example() {
                                     required
                                 />
                             </div>
-
                             <div className="mb-3">
                                 <Field
                                     className="form-control"

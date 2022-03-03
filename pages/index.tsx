@@ -1,7 +1,8 @@
-import Register from 'components/Register';
 import styled from 'styled-components';
 import Login from '../components/login';
 import Head from 'next/head';
+import Register from '../components/Register'
+//import 'bootstrap/dist/css/bootstrap.min.css';
 
 const HrLoginCara = styled.hr`
     border-top: 2px solid rgba(0, 0, 0, 0.1);
@@ -34,6 +35,7 @@ export default function Home() {
                 <title>Login Page</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
+                <meta name="description" content="Coomer Login" />
             </Head>
             <MainLogin>
                 <DivLogin>
@@ -42,7 +44,7 @@ export default function Home() {
                     </DivLoginSekce>
                     <HrLoginCara />
                     <DivLoginSekce>
-                        <Register />
+                    <Register/>
                     </DivLoginSekce>
                 </DivLogin>
             </MainLogin>
