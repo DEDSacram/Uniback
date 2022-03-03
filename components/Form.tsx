@@ -1,4 +1,5 @@
 import { FormEvent } from 'react';
+import Button from './Buttom'
 
 export default function LoginForm({
     errorMessage,
@@ -30,9 +31,9 @@ export default function LoginForm({
                     required
                 />
             </div>
-            <button type="submit" className="btn btn-primary sm-auto">
+            <Button type="submit" className="btn btn-primary sm-auto">
                 Login
-            </button>
+            </Button>
 
             {errorMessage && <p className="error">{errorMessage}</p>}
             <style jsx>{`
