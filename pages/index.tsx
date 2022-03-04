@@ -1,33 +1,11 @@
 import styled from 'styled-components';
 import Login from '../components/login';
 import Head from 'next/head';
-import Register from '../components/Register'
+import Registernew from '../components/Registernew'
+import { HrLoginCara,MainLogin,DivLogin,DivLoginSekce } from 'components/styledComp';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
-const HrLoginCara = styled.hr`
-    border-top: 2px solid rgba(0, 0, 0, 0.1);
-    width: 80%;
-`;
 
-const MainLogin = styled.main`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-`;
-
-const DivLogin = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #dee2e6;
-`;
-
-const DivLoginSekce = styled.div`
-    padding: 0.5rem;
-`;
 export default function Home() {
     return (
         <>
@@ -44,7 +22,7 @@ export default function Home() {
                     </DivLoginSekce>
                     <HrLoginCara />
                     <DivLoginSekce>
-                    <Register/>
+                    <Registernew/>
                     </DivLoginSekce>
                 </DivLogin>
             </MainLogin>

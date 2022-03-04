@@ -1,5 +1,5 @@
 import { FormEvent } from 'react';
-import Button from './Buttom';
+import {Button} from './styledComp'
 
 export default function LoginForm({
     errorMessage,
@@ -9,21 +9,18 @@ export default function LoginForm({
     onSubmit: (e: FormEvent<HTMLFormElement>) => void;
 }) {
     return (
-        <form onSubmit={onSubmit} className="d-flex flex-column">
-            <div className="mb-3">
+        <form onSubmit={onSubmit}>
+            <div>
                 <input
-                    className="form-control"
                     id="username"
                     name="username"
                     placeholder="Přezdívka"
-                    aria-describedby="usernameHelp"
                     required
                 />
             </div>
 
-            <div className="mb-3">
+            <div>
                 <input
-                    className="form-control"
                     id="password"
                     name="password"
                     placeholder="Heslo"
@@ -31,7 +28,7 @@ export default function LoginForm({
                     required
                 />
             </div>
-            <Button type="submit" className="btn btn-primary sm-auto">
+            <Button type="submit">
                 Login
             </Button>
 
