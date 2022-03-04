@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Formik, Field, Form, FormikHelpers } from 'formik';
-import {Modal, ModalBody, ModalFooter } from 'reactstrap';
-import Button from './Buttom'
+import Popup from 'reactjs-popup';
+import {Button,Modal} from './styledComp';
 interface Values {
     username: string;
     password: string;
@@ -9,21 +9,12 @@ interface Values {
     email: string;
 }
 function Example() {
-    const [modalOpen, setModalOpen] = useState(false);
     return (
         <>
-            <Button color="primary" type="button" onClick={() => setModalOpen(!modalOpen)}>
-                Registrovat
-            </Button>
-
-            <Modal toggle={() => setModalOpen(!modalOpen)} isOpen={modalOpen}>
-                <div className=" modal-header">
-                    <h1 className=" modal-title" id="exampleModalLabel">
-                        Registrace
-                    </h1>   
-                </div>
-                <ModalBody>
-                    <Formik
+         <Popup trigger={<Button>Registrovat</Button>} 
+                modal>
+             
+                <Formik
                         initialValues={{
                             username: '',
                             password: '',
@@ -38,20 +29,19 @@ function Example() {
                         }}
                     >
                         <Form>
-                            <div className="mb-3">
+                        <Modal>
+                            <h1>Registrace</h1>
+                            <div>
                                 <Field
-                                    className="form-control"
                                     id="username"
                                     name="username"
                                     placeholder="Přezdívka"
-                                    aria-describedby="usernameHelp"
                                     required
                                 />
                             </div>
 
-                            <div className="mb-3">
+                            <div>
                                 <Field
-                                    className="form-control"
                                     id="password"
                                     name="password"
                                     placeholder="Heslo"
@@ -59,9 +49,8 @@ function Example() {
                                     required
                                 />
                             </div>
-                            <div className="mb-3">
+                            <div>
                                 <Field
-                                    className="form-control"
                                     id="confirmpassword"
                                     name="confirmpassword"
                                     placeholder="Potvrzení hesla"
@@ -69,24 +58,25 @@ function Example() {
                                     required
                                 />
                             </div>
-                            <div className="mb-3">
+                            <div>
                                 <Field
-                                    className="form-control"
                                     id="email"
                                     name="email"
                                     placeholder="Email (Optional)"
                                 />
                             </div>
 
-                            <Button type="submit" className="btn btn-primary">
+                            <Button type="submit">
                                 Registrovat
                             </Button>
+                            </Modal>
                         </Form>
                     </Formik>
-                </ModalBody>
+                   
+                </Popup>
+          
 
-                <ModalFooter></ModalFooter>
-            </Modal>
+          
         </>
     );
 }

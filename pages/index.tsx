@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Login from '../components/login';
 import Head from 'next/head';
-import Registernew from '../components/Registernew'
+import Registernew from '../components/Register'
 import { HrLoginCara,MainLogin,DivLogin,DivLoginSekce } from 'components/styledComp';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
