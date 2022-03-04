@@ -6,6 +6,10 @@ export const sanitizeString = (text: string): string => {
     return text.normalize().trim().replace(twoOrMoreWhiteSpace, ' ');
 };
 
+export const checkInput = (text: string): boolean => {
+    return /^\w+$/.test(text);
+};
+
 export const checkPassword = (password: string): boolean => {
     return password.length >= 8 && password.match(/\d/) && password.match(/[A-Z]/) && password.match(/[a-z]/)
         ? true
