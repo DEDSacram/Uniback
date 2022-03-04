@@ -6,44 +6,15 @@ import React, { useState } from "react";
 import Popup from 'reactjs-popup';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-
-
-
-const Navbar = styled.div`
-    display: flex;
-    background-color: #333;
-    overflow: hidden;
-    justify-content: space-between;
-`;
-const NavbarRight = styled.div`
-`
-const SearchBar = styled.div`
-margin-left: auto;
-margin-right: auto;
-`
-const Link = styled.a`
-float: left;
-background-color: #333;
-color:white;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-font-size: 17px;
-`
-
-
-
+import { Navbar,NavbarRight,SearchBar,Link } from 'components/styledComp';
 export default function SgProfile() {
     const { user, mutateUser } = useUser({
         redirectTo: '/',
     });
-
     const [value, onChange] = useState(new Date());
     const Onclick = () => {
         console.log(value);
     };
-
-   
     const router = useRouter(); 
     return (
         <>
