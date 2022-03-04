@@ -27,7 +27,7 @@ export const hashPassword = (
 };
 
 export const newHashPassword = (password: string) => {
-    const salt = randomBytes(256).toString('hex');
+    const salt = randomBytes(16).toString('hex');
     const hash = hashPassword(password, salt, 10000, 64, 'sha512');
     return {
         hash: hash,
