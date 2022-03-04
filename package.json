@@ -11,7 +11,7 @@
         "iron-session": "6.0.5",
         "next": "12.1.0",
         "react": "^17.0.2",
-        "react-bootstrap": "^2.1.2",
+        "react-bootstrap": "^2.2.0",
         "react-calendar": "^3.7.0",
         "react-dom": "^17.0.2",
         "react-icons": "^4.3.1",
