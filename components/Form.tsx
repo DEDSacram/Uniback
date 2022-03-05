@@ -1,36 +1,17 @@
 import { FormEvent } from 'react';
-import {Button} from './styledComp'
+import { Button } from './styledComp';
 
-export default function LoginForm({
-    errorMessage,
-    onSubmit,
-}: {
-    errorMessage: string;
-    onSubmit: (e: FormEvent<HTMLFormElement>) => void;
-}) {
+export default function LoginForm({ errorMessage, onSubmit }: { errorMessage: string; onSubmit: (e: FormEvent<HTMLFormElement>) => void }) {
     return (
         <form onSubmit={onSubmit}>
             <div>
-                <input
-                    id="username"
-                    name="username"
-                    placeholder="Přezdívka"
-                    required
-                />
+                <input id="username" name="username" placeholder="Přezdívka" required />
             </div>
 
             <div>
-                <input
-                    id="password"
-                    name="password"
-                    placeholder="Heslo"
-                    type="password"
-                    required
-                />
+                <input id="password" name="password" placeholder="Heslo" type="password" required />
             </div>
-            <Button type="submit">
-                Login
-            </Button>
+            <Button type="submit">Login</Button>
 
             {errorMessage && <p className="error">{errorMessage}</p>}
             <style jsx>{`

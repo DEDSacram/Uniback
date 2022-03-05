@@ -1,26 +1,24 @@
-import styled from 'styled-components'
-
+import styled from 'styled-components';
 
 //Form+Register
 export const Button = styled.button`
-color: #fff;
-background-color: #0d6efd;
-border-color: #0d6efd;
-border: 1px solid transparent;
-padding: 0.375rem 0.75rem;
-font-size: 1rem;
-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-`
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+`;
 export const Modal = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-gap: 26px 26px;
-background-color: white;
-border: 1px solid #dee2e6;
-`
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 26px 26px;
+    background-color: white;
+    border: 1px solid #dee2e6;
+`;
 
 //Login
 export const HrLoginCara = styled.hr`
@@ -48,7 +46,6 @@ export const DivLoginSekce = styled.div`
     padding: 0.5rem;
 `;
 
-
 //Main
 export const Navbar = styled.div`
     display: flex;
@@ -56,18 +53,17 @@ export const Navbar = styled.div`
     overflow: hidden;
     justify-content: space-between;
 `;
-export const NavbarRight = styled.div`
-`
+export const NavbarRight = styled.div``;
 export const SearchBar = styled.div`
-margin-left: auto;
-margin-right: auto;
-`
+    margin-left: auto;
+    margin-right: auto;
+`;
 export const Link = styled.a`
-float: left;
-background-color: #333;
-color:white;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-font-size: 17px;
-`
+    float: left;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+`;

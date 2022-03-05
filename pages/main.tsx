@@ -2,11 +2,12 @@ import useUser from 'lib/useUser';
 import { useRouter } from 'next/router';
 import fetchJson from 'lib/fetchJson';
 import styled from 'styled-components';
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import Popup from 'reactjs-popup';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import { Navbar,NavbarRight,SearchBar,Link } from 'components/styledComp';
+import { Navbar, NavbarRight, SearchBar, Link } from 'components/styledComp';
+
 export default function SgProfile() {
     const { user, mutateUser } = useUser({
         redirectTo: '/',
@@ -15,75 +16,71 @@ export default function SgProfile() {
     const Onclick = () => {
         console.log(value);
     };
-    const router = useRouter(); 
+    const router = useRouter();
     return (
         <>
-        <style jsx global>{`
-body {
-  margin: 0;
-}
-button, input[type="submit"], input[type="reset"] {
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-}
-a:hover{
-    color: black;
-    background-color:white;
-}
-.navbut{
-color:white;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-font-size: 17px;
-}
-.navbut:hover{
-    color: black;
-    background-color:white;
-}
-`}</style>
+            <style jsx global>{`
+                body {
+                    margin: 0;
+                }
+                button,
+                input[type='submit'],
+                input[type='reset'] {
+                    background: none;
+                    color: inherit;
+                    border: none;
+                    padding: 0;
+                    font: inherit;
+                    cursor: pointer;
+                    outline: inherit;
+                }
+                a:hover {
+                    color: black;
+                    background-color: white;
+                }
+                .navbut {
+                    color: white;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                    font-size: 17px;
+                }
+                .navbut:hover {
+                    color: black;
+                    background-color: white;
+                }
+            `}</style>
             <Navbar>
-                
-                <Popup trigger={<button className='navbut'> Vybrat datum </button>} 
-                modal>
-                <div>
-                <Calendar onChange={onChange} value={value} />
-                <button onClick={Onclick}>Potvrdit</button>
-                </div>
+                <Popup trigger={<button className='navbut'> Vybrat datum </button>} modal>
+                    <div>
+                        <Calendar onChange={onChange} value={value} />
+                        <button onClick={Onclick}>Potvrdit</button>
+                    </div>
                 </Popup>
 
                 <SearchBar>
-                <form>
-                <input type="text" placeholder="Hledejte" name="searchbar"/>
-               
-                <button className='navbut' type="submit">Vyhledat</button>
-                </form>
+                    <form>
+                        <input type='text' placeholder='Hledejte' name='searchbar' />
+
+                        <button className='navbut' type='submit'>
+                            Vyhledat
+                        </button>
+                    </form>
                 </SearchBar>
 
-             
                 <NavbarRight>
-                    
-                <Link
-                href="/api/logout"
-                onClick={async (e) => {
-                    e.preventDefault();
-                    mutateUser(await fetchJson('/api/logout', { method: 'POST' }), false);
-                    router.push('/');
-                }}
-            >
-               Odhlásit se
-                
-            </Link>
+                    <Link
+                        href='/api/logout'
+                        onClick={async (e) => {
+                            e.preventDefault();
+                            mutateUser(await fetchJson('/api/logout', { method: 'POST' }), false);
+                            router.push('/');
+                        }}
+                    >
+                        Odhlásit se
+                    </Link>
                 </NavbarRight>
-         
             </Navbar>
-            
-          
         </>
     );
 }

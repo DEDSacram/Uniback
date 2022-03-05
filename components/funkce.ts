@@ -11,18 +11,10 @@ export const checkInput = (text: string): boolean => {
 };
 
 export const checkPassword = (password: string): boolean => {
-    return password.length >= 8 && password.match(/\d/) && password.match(/[A-Z]/) && password.match(/[a-z]/)
-        ? true
-        : false;
+    return password.length >= 8 && password.match(/\d/) && password.match(/[A-Z]/) && password.match(/[a-z]/) ? true : false;
 };
 
-export const hashPassword = (
-    password: string,
-    salt: string,
-    iterations: number,
-    keylen: number,
-    algorithm: string
-): string => {
+export const hashPassword = (password: string, salt: string, iterations: number, keylen: number, algorithm: string): string => {
     return pbkdf2Sync(password, salt, iterations, keylen, algorithm).toString('hex');
 };
 
