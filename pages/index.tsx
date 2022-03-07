@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import Login from '../components/login';
 import Head from 'next/head';
 import Registernew from '../components/Register'

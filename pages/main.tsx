@@ -80,10 +80,7 @@ font-size: 17px;
                 
             </Link>
                 </NavbarRight>
-         
             </Navbar>
-            
-          
         </>
     );
 }
