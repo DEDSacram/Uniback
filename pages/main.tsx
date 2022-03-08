@@ -7,7 +7,8 @@ import Popup from 'reactjs-popup';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { Navbar,NavbarRight,SearchBar,Link } from 'components/styledComp';
-export default function SgProfile() {
+import { connectToDatabase } from 'components/mongodb';
+export default function SgProfile({isConnected} : any) {
     const { user, mutateUser } = useUser({
         redirectTo: '/',
     });
@@ -16,6 +17,7 @@ export default function SgProfile() {
         console.log(value);
     };
     const router = useRouter(); 
+    console.log(isConnected)
     return (
         <>
         <style jsx global>{`
@@ -84,3 +86,31 @@ font-size: 17px;
         </>
     );
 }
+export async function getServerSideProps(context : any) {
+    try {
+      // client.db() will be the default database passed in the MONGODB_URI
+      // You can change the database by calling the client.db() function and specifying a database like:
+      // const db = client.db("myDatabase");
+      // Then you can execute queries against your database like so:
+      // db.find({}) or any of the MongoDB Node Driver commands
+      
+        let { db } = await connectToDatabase();
+        // fetch the posts
+        let posts = await db
+            .collection('characters')
+            .find({})
+            .toArray();
+        // return the posts
+        // console.log(JSON.parse(JSON.stringify(posts)))
+   
+     
+      return {
+        props: { isConnected: JSON.parse(JSON.stringify(posts)) },
+      }
+    } catch (e) {
+      console.error(e)
+      return {
+        props: { isConnected: false },
+      }
+    }
+  }
